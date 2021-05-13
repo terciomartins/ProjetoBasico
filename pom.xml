@@ -1,0 +1,43 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>br.ce.wcaquino</groupId>
+  <artifactId>ProjetoBasio</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <!--  inicio confiracao para rodar via maven -->
+  <build>
+  	<testSourceDirectory>src</testSourceDirectory>
+  	<plugins>
+  		<plugin>
+  			<groupId>org.apache.maven.plugins</groupId> <!--  existem outros plugins. este e para testes paralelos -->
+  			<artifactId>maven-surefire-plugin</artifactId>
+  			<version>3.0.0-M3</version> <!-- 2.18.1 -->
+  			<configuration>
+  				<includes>
+  					<include>br/ce/wcaquino/suites/*.java</include> <!--  roda os teste configurados na suite  --> 				
+  				</includes>
+  				<parallel>all</parallel> <!-- existem varias opcoes por metodos e por suites --> 
+  				<threadCount>1</threadCount> 	<!--  quantas threads vao rodar em paralelo   -->				
+  			</configuration>
+  		</plugin>  	
+  	</plugins>  	
+  </build>
+  <!--  fim confiracao para rodar via maven -->
+  <!--  para rodar os testes, acessar endereco do projeto via cmd e teclar os comandos mcv 'clean teste' para limpar classes ja compiladas e recompilar e logo apos 'mvn test' -->
+   <dependencies>
+  	<dependency>
+  		<groupId>org.seleniumhq.selenium</groupId>
+  		<artifactId>selenium-java</artifactId>
+  		<version>3.14.0</version> <!-- 3.4.0 antes  / depois da atualizacao a dependencia junit e commons-io foram perdidas-->
+  	</dependency>
+  	<dependency>
+  		<groupId>junit</groupId>
+  		<artifactId>junit</artifactId>
+  		<version>4.12</version> <!-- dependencia responsavel por teste unitarios - apos declara aki, selecionar projeto com botao direito do mouse / maven / update project -->
+  	</dependency>
+  	<dependency>
+  		<groupId>commons-io</groupId>
+  		<artifactId>commons-io</artifactId>
+  		<version>2.6</version> <!-- dependencia responsavel por gerar img de evidencia - apos declara aki, selecionar projeto com botao direito do mouse / maven / update project -->
+  	</dependency>
+  </dependencies>
+</project>
