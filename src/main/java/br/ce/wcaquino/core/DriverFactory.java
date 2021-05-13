@@ -71,7 +71,7 @@ public class DriverFactory {
 			}
 			//driver = new RemoteWebDriver(new URL("http://192.168.15.17:4444/wd/hub/"), cap);
 			try {
-				driver = new RemoteWebDriver(new URL("http://tercio:82f1e895-94b2-4c27-9a5d-aa220be9235e@ondemand.saucelabs.com:80/wd/hub/"), cap);
+				driver = new RemoteWebDriver(new URL("http://xxx:xxxx@ondemand.saucelabs.com:80/wd/hub/"), cap);
 			} catch (MalformedURLException e) {
 				// TODO Auto-generated catch block
 				System.err.println("Falha de Conexao com o GRID");
